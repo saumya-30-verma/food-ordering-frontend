@@ -275,7 +275,7 @@ function App() {
           className='food-card'
           >
 
-            <img src={food.image} />
+            <img src={food.image} alt={food.name}/>
 
             <h2>{food.name}</h2>
             <p>Rs.{food.price}</p>
