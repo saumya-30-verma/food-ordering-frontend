@@ -22,7 +22,7 @@ function App() {
   });
 
   const getFoods = ()=> {
-       fetch("http://localhost:5000/foods")
+       fetch("https://food-ordering-backend-n0ls.onrender.com/foods")
     .then((res) => res.json())
     .then((data) => {
       setFoods(data);
@@ -30,7 +30,7 @@ function App() {
   }
 
   const getStats = async() => {
-    const response = await fetch("http://localhost:5000/test")
+    const response = await fetch("https://food-ordering-backend-n0ls.onrender.com/test")
     const data = await response.json();
     setStats(data);
   }
@@ -48,7 +48,7 @@ function App() {
     image,
     description
   });
-    const response = await fetch("http://localhost:5000/foods", {
+    const response = await fetch("https://food-ordering-backend-n0ls.onrender.com/foods", {
       method: "POST",
       headers: {
         "Content-type": "application/json"
@@ -76,7 +76,7 @@ function App() {
     setEditId(food._id);
   }
   const deletefood = async(id)=> {
-      await fetch(`http://localhost:5000/deletefood/${id}`, {
+      await fetch(`https://food-ordering-backend-n0ls.onrender.com/deletefood/${id}`, {
         method: "DELETE"
       });
       getFoods();
@@ -84,7 +84,7 @@ function App() {
     };
 
     const updateFood = async()=> {
-      await fetch(`http://localhost:5000/foods/${editId}`, {
+      await fetch(`http://food-ordering-backend-n0ls.onrender.com/foods/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
